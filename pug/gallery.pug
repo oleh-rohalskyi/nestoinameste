@@ -1,0 +1,26 @@
+extends layout.pug
+block content
+    section.gallery(style="")
+        h1 Видео
+        .glider-contain
+            .glider
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/ne-stoj-na-meste4.jpg)' alt='1')
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/111-1024x683.jpg)' alt='1')
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/nestoimain.jpg)' alt='1')
+            button.glider-prev(aria-label='Previous') &laquo;
+            button.glider-next(aria-label='Next') &raquo;
+    section.gallery(style="")
+        h1 ФОТОГАЛЕРЕЯ
+        .glider-contain
+            .glider-photo
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/ne-stoj-na-meste4.jpg)' alt='1')
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/111-1024x683.jpg)' alt='1')
+                .slider-single-image
+                    .image(style='background-image: url(/images/photos/nestoimain.jpg)' alt='1')
+            button.glider-prev(aria-label='Previous') &laquo;
+            button.glider-next(aria-label='Next') &raquo;

@@ -1,0 +1,128 @@
+$mid: 1080px
+$min: 840px
+    
+@import './fonts'
+@import './colors'
+@import './reset'
+@import './header'
+@import './footer'
+
+.row 
+    display: flex
+    flex-direction: row
+.form-contact
+    @media (max-width: 840px)
+        width: 100vw
+        left: 0
+        padding: 30px 10px
+        & .row 
+            display: flex
+            flex-direction: column
+        & .form-group 
+            margin-left: 0 !important
+            width: 100%
+        & input, textarea
+            width: 100% !important
+        
+    .default-button
+        width: 170px
+        height: 51px
+        line-height: 52px
+        margin: 21px auto
+        text-align: center
+    box-shadow: 2px 4px 15px 5px rgba(209,230,188,1)
+    top: 100px
+    padding: 30px 100px
+    position: fixed
+    width: 970px
+    left: calc(50% - 485px)
+    background-color: white
+    margin: 0 auto
+    z-index: 100
+    &>.form-group.move-left
+        margin-left: 10px
+    & .form-group
+        & label
+            margin: 15px 0 8px 0
+        margin: auto
+        display: inline-block
+        display: flex
+        flex-direction: column
+    & input
+        color: #979797
+        font-size: 18px
+        padding: 4px
+        padding-left: 10px
+        background-color: #D1E6BC
+        width: 370px
+        height: 51px
+        border: none
+        border-radius: 5px
+    & textarea
+        color: #979797
+        font-size: 18px
+        padding: 4px
+        padding-left: 10px
+        background-color: #D1E6BC
+        width: 100%
+        height: 300px
+        border: none
+        border-radius: 5px
+
+.breadcrumps
+    margin-top: 86px
+    padding: 10px 40px
+    z-index: 3
+    & span 
+        color: #E7A24F
+body
+    min-height: 100vh
+    background-color: white
+    overflow-x: hidden
+    width: 100vw
+    font-family: 'Roboto Condensed', sans-serif
+.dimmed-green
+    display: none
+    position: absolute
+    top: 0
+    bottom: 0
+    width: 100vw
+    height: 100%
+    left: 0
+    background-color: #7BB83E
+    opacity: 0.7
+    @media (max-width: $min)
+        display: block
+    &.allways
+        display: block
+.dimmed
+    // display: none
+    position: fixed
+    z-index: 1
+    width: 100vw
+    height: 100vh
+    background-color: black
+    opacity: 0.0
+    pointer-events: none
+    transition: 2s
+    &.is-active
+        // display: block
+        opacity: 0.8
+.default-button
+    background: linear-gradient(180deg, #E7A24F 0%, #E7734F 100%)
+    box-shadow: 0px 4px 4px rgba(124, 65, 22, 0.15)
+    border-radius: 10px
+    cursor: pointer
+    color: white
+    &:hover 
+        background: linear-gradient(360deg, #E7A24F 0%, #E7734F 100%)
+    &_menu
+        height: 47px
+        width: 170px
+        line-height: 47px
+        text-align: center
+    &_zakazat
+        height: 47px
+        width: 170px
+        line-height: 47px
+        text-align: center

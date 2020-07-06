@@ -1,0 +1,6 @@
+@font-face {
+  font-family: Octava;
+  src: url("/fonts/octava.otf") format("opentype"); }
+
+.font__octava--regular {
+  font-family: Octava; }

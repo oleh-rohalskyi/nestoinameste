@@ -1,0 +1,242 @@
+extends ../layout.pug
+
+block content
+    section.promo(style="")
+        .promo__title
+            .promo__title-head
+                span #NESTOI
+                span NA
+                span MESTE 
+                span  HOUSE
+            .promo__title-min
+                img(src="/images/logo-mob.svg")
+            .promo__title-discription 
+                | Event локация под корпоратив, день рождения и отдых на природе 
+                br 
+                br 
+                | 20 мин от центра Киева
+        .promo__slider
+            include /public/images/particles/Group 157.svg
+        .promo__slider-min
+            a(href="")
+                img(src="/images/particles/min/cafe.svg")
+            a(href="")
+                img(src="/images/particles/min/rent.svg")
+            a(href="")
+                img(src="/images/particles/min/corporative.svg")
+            a(href="")
+                img(src="/images/particles/min/sport.svg")
+        img.wave(src="/images/particles/button-wave.png")
+        img.halfwave(src="/images/particles/min/halfwave.png")
+    section.here-all
+        h1 «Тут все свои»
+        p.font__octava--regular Мы создали домик своей мечты, где каждый сможет почувствовать себя как дома, побыть наедине с природой, заняться спортом, встретиться с друзьями и найти единомышленников. Именно по этому наш девиз «Тут все свои».  
+        p.font__octava--regular На базе стартовой площадки для вейкбординга мы построили кафе с вкуснейшей коктейльной картой, обширной линейкой сидров и кухней с мангал-меню и легкими деликатесными закусками под прохладительные напитки. Welcome to my home. 
+            span ✋
+        img.wave(src="/images/particles/green-wave.png")
+    section.photo-galery
+        h1 ФОТОГАЛЕРЕЯ
+        .glider-contain
+            .glider
+                .glider-slide
+                    .image(style='background-image: url(/images/photos/ne-stoj-na-meste4.jpg)' alt='1')
+                .glider-slide
+                    .image(style='background-image: url(/images/photos/111-1024x683.jpg)' alt='1')
+                .glider-slide
+                    .image(style='background-image: url(/images/photos/nestoimain.jpg)' alt='1')
+            .glider-prev(aria-label='Previous') 
+                img.left(src="/images/particles/left.png")
+            .glider-next(aria-label='Next')
+                img.right(src="/images/particles/right.png")
+            .dots(role='tablist')
+    section.corporativ
+        h1 КOРПОРАТИВ
+        div.corporativ-items
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Union.png")
+                .corporativ-items__item-title AРЕНДА    
+                .corporativ-items__item-discript.font__octava--regular Шатер, мангал, сцена
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Outline copy.png")
+                .corporativ-items__item-title KОРПОРАТИВЫ    
+                .corporativ-items__item-discript.font__octava--regular Организация, проведение
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/birthday.png")
+                .corporativ-items__item-title ДНИ РОЖДЕНИЯ    
+                .corporativ-items__item-discript.font__octava--regular Подготовим всё для Вашего лутшео праздника
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Group 11.png")
+                .corporativ-items__item-title EVENT ЛОКАЦИЯ  
+                .corporativ-items__item-discript.font__octava--regular Cобсвенная сцена, мероприятия до 400 человек
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Group 48.png")
+                .corporativ-items__item-title ЛАУНДЖ ЗОНА   
+                .corporativ-items__item-discript.font__octava--regular Кальян, крафтовое пиво, мангал меню, уютные пуфики
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Group.png")
+                .corporativ-items__item-title СЕМЕЙНЫЙ ОТДЫХ    
+                .corporativ-items__item-discript.font__octava--regular Отличная площадка для тихого и уютного отдыха
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/outline.png")
+                .corporativ-items__item-title КЕЙТЕРИНГ    
+                .corporativ-items__item-discript.font__octava--regular Организация под ключ
+            .corporativ-items__item
+                .corporativ-items__item-img
+                    img(src="/images/corporativ-items/Group 12.png")
+                .corporativ-items__item-title СПОРТИВНАЯ ЗОНА    
+                .corporativ-items__item-discript.font__octava--regular Бамперболл, Вейкборд, Слеклайн, поляна для йоги
+        a
+            div.default-button.contact-form-action_js.default-button_zakazat Заказать
+    section.about
+        .dimmed-green
+        h1 О НАС
+        .about-discription
+            .about-discription__image(style="background-image: url('/images/photos/nestoimain.jpg')")
+                img(src="/images/particles/Group 105.png")
+            .about-discription__text
+                h2.font__octava--regular Дорогие друзья, приглашаем вас посетить нашу локацию #nestoinameste, HOUSE XPark, в центральной части Киева с lounge зоной, event зоной и sport зоной где вы сможете вкусно поесть, провести большое мероприятие и просто замечательно отдохнуть большой компанией от городской суеты, расслабиться и спрятаться от жары на берегу залива реки Десенка, в уютном шатре.
+                h2.font__octava--regular 
+                    | Так же вы сможете принять участие в различных event мероприятиях, поиграть в бампербол, на первом в Украине стационарном поле для бампербола, научится ходить по Слеклайну, сыграть в Петанк, промчаться на Вейкборде, по кольцевой канатной дороге вдоль берега и многое другое.
+                    br
+                    a.about-discription__link.contact-form-action_js Познакомимся?
+    section.feedback
+        h1 ОТЗЫВЫ
+        .glider-contain
+            .glider-feed
+                .feedback-slide__discription
+                    .left
+                        img(src="/images/feedbacks/Ellipse 8.png")
+                    .right
+                        h2 Ольга Болгарская
+                        p.font__octava--regular Благодаря ребятам из Nestoinameste наш корпоратив прошел на высоте! Нас было 43 человека и все были при деле. Скучать не приходилось, так как продумано все до мелочей. Командные игры, вкусная еда, живая музыка и море позитива. Очень рекомендую!;)
+                        span 21 августа 2019
+                .feedback-slide__discription
+                    .left
+                        img(src="/images/feedbacks/mask.png")
+                    .right
+                        h2 Анна Охматенко
+                        p.font__octava--regular Благодаря ребятам из NestoinУ ребят всегда много идей и активностей под любой повод, будь то ДР, корпоратив, праздник или просто хороший отдых компанией. Зимой ездила на Драгобрат, научили катать на борде. Было очень весело и позитивно! Бывала на квартирниках - обожаю хорошую музыку под гитару и душевную обстановку. А сосвсем скоро откроется летняя локация в Х-парке, где можно и в бамперболл побегать, поучиться ходить на слеклайне, потусить под музыку, прокатиться на вейкборде и при этом вкусно поесть на берегу у водички:)
+                        //- span 21 августа 2019
+                .feedback-slide__discription
+                    .left
+                        img(src="/images/feedbacks/nastya.png")
+                    .right
+                        h2 Марина Зарубина 
+                        p.font__octava--regular Ребята организовуют очень классные поездки, ездила с ними на Драгобрат) Очень довольна!)) И ещё есть мега крутая летняя локация на берегу озера в х-парке) Там можно целый день провести хоть самому , хоть с семьёй, хоть с друзьями, там вкусно и проводятся очень крутые музыкальные и не только, мероприятия)))
+                        //- span 21 августа 2019
+                .feedback-slide__discription
+                    .left
+                        img(src="/images/feedbacks/roma.png")
+                    .right
+                        h2 Roman Byvalkevych
+                        p.font__octava--regular Ездил с #nestoinameste в Гудаури и Драгобрат. Обе поездки оставили кучу крутейших воспоминаний. Спасибо за столь классно проведенное время! Еще увидимся)
+                        //- span 21 августа 2019
+                .feedback-slide__discription
+                    .left
+                        img(src="/images/feedbacks/ivan.png")
+                    .right
+                        h2 IvOn 
+                        p.font__octava--regular Конечно же рекомендую! Связавшись с этой организацией вы гарантировано испытаете все возможные положительные эмоции и чувства😎😆
+                        //- span 21 августа 2019
+            .glider-prev-feed(aria-label='Previous') 
+                img.left(src="/images/particles/left.png")
+            .glider-next-feed(aria-label='Next')
+                img.right(src="/images/particles/right.png")
+    section.our-team
+        h1 НАША КОМАНДА
+        img(src="/images/photos/IMG_1677-min-2-1024x683.jpg")
+    section.season-result
+        h1 
+            | РЕЗУЛЬТАТИ СЕЗОНА 2019
+            br 
+            | (июнь-aвгуст)
+        .season-result__wrap
+            .season-result__item
+                .season-result__image
+                    img(src="/images/seasons/1/5.png")
+                .season-result__discription.font__octava--regular
+                    | Провели 5 корпоративов 
+                    br 
+                    | 80+ человек
+            .season-result__item
+                .season-result__image
+                    img(src="/images/seasons/1/17.png")
+                .season-result__discription.font__octava--regular
+                    | 17 корпоративов 
+                    br 
+                    | 20+ человек
+            .season-result__item
+                .season-result__image
+                    img(src="/images/seasons/1/8.png")
+                .season-result__discription.font__octava--regular
+                    | 8 ночных вечеринок
+                    br 
+                    | (на 1 пати собрали 900 человек)
+            .season-result__item.season-result__item_left
+                .season-result__image
+                    img(src="/images/seasons/1/4.png")
+                .season-result__discription.font__octava--regular.season-result__discription_more-space
+                    | 4 семинара 80-200 человек
+            .season-result__item.season-result__item_right
+                .season-result__image
+                    img(src="/images/seasons/1/1.png")
+                .season-result__discription.season-result__discription_more-space
+                    | 1 музыкальный фестиваль
+            .season-result__item.font__octava--regular.season-result__item-mob
+                div
+                    | Создали внутри платформы #nst Travel – sport Hub, провели 4 встречи с топ
+                    br 
+                    | спикерами, собрали около 150 человек
+        .season-result-discription 
+            | Создали внутри платформы #nst Travel – sport Hub, провели 4 встречи с топ
+            br 
+            | спикерами, собрали около 150 человек
+    section#contacts-link.contacts(style="background-image: url('/images/photos/rBVaSluKICyAcK0iAAJN92Y0wOQ855.jpg')")
+        .dimmed-green.allways
+        img.wave(src="/images/particles/top-wave.png")
+        h1 КОНТАКТЫ
+        .contacts-information
+            .contacts-information__info.font__octava--regular 
+                img(src="/images/particles/Group 105.png")
+                a(href="tel:+380502420211") +38 (050) 242-02-11
+                a(href="email:ukrainekava@gmail.com") ukrainekava@gmail.com
+                a(href="") Киев, X-Park, 02139
+                .default-button.contact-form-action_js Задать вопрос
+            .contacts-information__map#map
+    section.clients
+        h1 НАШИ КЛИЕНТЫ
+        .clients__wrap
+            img(src="/images/partners/herbal.png")
+            img(src="/images/partners/rita.png")
+            img(src="/images/partners/fora.png")
+            img(src="/images/partners/park.png")
+            img(src="/images/partners/metro.png")
+            img(src="/images/partners/mercedes-benz.png")
+            img(src="/images/partners/trassir.png")
+            img(src="/images/partners/sadolin.png")
+            img(src="/images/partners/epikup.png")
+block scriptgit remote add origin https://github.com/Oleh-Rohalskyi/nestoinameste.git
+    script.
+        let map;
+        let positionMarker = {lat: 50.49749, lng: 30.5444215};
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+            center: positionMarker,
+            zoom: 16
+            });
+            var marker = new google.maps.Marker({position: positionMarker, map: map});
+        }
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCF3YmCNjk1rcXFi0tt_SRA7yuim00QuOo&callback=initMap" async defer)
+
+
+        
+        
+
+    

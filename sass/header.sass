@@ -1,0 +1,107 @@
+@import ./burger.scss
+.header-mob
+    position: fixed
+    width: 100%
+    top: 0
+    z-index: 5
+    height: 52px
+    background-color: #262626
+    padding: 0 15px
+    display: none
+    @media (max-width: $min) 
+        display: flex
+        align-items: center
+    &__telega 
+        margin-left: auto
+        margin-right: 18px
+    &__logo
+        text-align: center
+        width: 100%
+        margin: auto
+        height: 52px
+        & img
+            width: 174px
+            margin-top: 18px
+
+
+.side-menu
+    z-index: 6
+    position: fixed
+    width: calc(100vw - 54px)
+    right: calc( (100vw - 54px) * -1 )
+    transition: all 1s
+    height: 100vh
+    background-color: white
+    top: 0
+    &.is-active
+        right: 0
+        display: block
+        @media (min-width: $min)
+            display: none
+    & .logo
+        width: calc(100vw - 54px - 90px)
+        margin-left: 45px
+        margin-top: 36px
+    & ul 
+        margin-top: 50px
+        font-size: 25px
+        margin-left: 30px
+        & li
+            line-height: 55px
+        
+        
+        
+
+.menu-button 
+	display: inline-block;
+	background-color: transparent;
+
+.burger-icon 
+	@include burger(28px, 3px, 5px, white)
+
+.menu-button.is-active .burger-icon 
+	@include burger-to-cross;
+
+.header-wrap
+    @media (max-width: $min) 
+        display: none
+    & .header
+        padding-left: 10px
+        z-index: 1000
+        height: 80px
+        position: fixed
+        top: 0
+        width: 100vw
+        background-color: $bg-header
+        display: flex
+        flex-direction: 
+        align-items: center
+        & .menu-contacts 
+            align-items: center
+            margin-right: 10px
+            display: flex
+            margin-left: auto
+            & a:first-child
+                margin-right: 5px
+        & .menu 
+            margin-left: auto
+            display: flex
+            flex-direction: row
+            color: $default-black
+            & li 
+                margin-left: 10px
+                & a:hover 
+                    color: $brand-orange
+        & .logo 
+            margin-top: 5px
+            height: 63px
+            width: 241px
+            margin-left: 140px
+            @media (max-width: $mid)
+                margin-left: auto
+                width: 180px
+        & .default-button 
+            margin-left: auto
+            margin-right: 20px
+            @media (max-width: $mid)
+                width: 140px
