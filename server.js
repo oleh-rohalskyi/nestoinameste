@@ -95,5 +95,5 @@ app.get( '/gallery' , function(req,res) {
 });
 
 app.listen(config.dev.PORT,()=>{
-    console.log("Server listen on:", "http://localhost:" + config.prod.PORT);
+    console.log("Server listen on:", "http://localhost:" + config.dist.PORT);
 });
