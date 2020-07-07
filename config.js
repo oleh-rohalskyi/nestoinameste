@@ -3,6 +3,6 @@ module.exports = {
         "PORT": 8080
     },
     "dist": {
-        "PORT": 80
+        "PORT": 8080
     },
 }
