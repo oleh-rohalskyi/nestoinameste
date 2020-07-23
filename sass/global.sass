@@ -31,14 +31,22 @@ $min: 840px
         margin: 21px auto
         text-align: center
     box-shadow: 2px 4px 15px 5px rgba(209,230,188,1)
-    top: 100px
-    padding: 30px 100px
+    padding: 30px 10px
     position: fixed
-    width: 970px
-    left: calc(50% - 485px)
+    left: 25px
+    overflow-y: scroll
+    width: calc(100% - 50px)
+    top: 20px
+    height: calc(100vh - 50px)
+    z-index: 2000 !important
     background-color: white
     margin: 0 auto
     z-index: 100
+    &__close 
+        position: absolute
+        right: 10px
+        top: 10px
+        cursor: pointer
     &>.form-group.move-left
         margin-left: 10px
     & .form-group

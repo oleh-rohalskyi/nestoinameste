@@ -10,6 +10,7 @@ html(lang="en")
         .dimmed
         block header
             form.form-contact.contact-form(style="display: none")
+                .form-contact__close X
                 .row
                     .form-group
                         label(for="") Введите Ваше имя
@@ -93,11 +94,11 @@ html(lang="en")
                         a(href="tel:+380502420211") +38 (050) 242-02-11
                         a(href="email:ukrainekava@gmail.com") ukrainekava@gmail.com
                         a(href="") Киев, X-Park, 02139
-                    .footer-info__item
-                        h2 Новости
-                        a Ближайшие мероприятия
-                        a Фестивали
-                        a Новинка на локации
+                    //- .footer-info__item
+                    //-     h2 Новости
+                    //-     a Ближайшие мероприятия
+                    //-     a Фестивали
+                    //-     a Новинка на локации
                     .footer-info__item
                         h2 Мы в соц сетях
                         .fotter-info__social
@@ -122,6 +123,7 @@ html(lang="en")
             });
 
             const contactForm = document.querySelector('.contact-form');
+            const closeForm = document.querySelector('.form-contact__close');
             const contactsSubmit = document.querySelector('.submit-contact_js');
             const toContactFormActionsNode = [...document.querySelectorAll('.contact-form-action_js')];
             document.addEventListener('click', function(event) {
@@ -136,6 +138,9 @@ html(lang="en")
                     contactForm.style.display = 'none';
                 }
             });
+            closeForm.addEventListener('click', function(event) {
+                contactForm.style.display = 'none';
+            })
             toContactFormActionsNode.forEach(actionNode=>{
                 actionNode.addEventListener('click', function (e) {
                     console.log('click');

@@ -264,11 +264,14 @@ table {
 
 .form-contact {
   box-shadow: 2px 4px 15px 5px #d1e6bc;
-  top: 100px;
-  padding: 30px 100px;
+  padding: 30px 10px;
   position: fixed;
-  width: 970px;
-  left: calc(50% - 485px);
+  left: 25px;
+  overflow-y: scroll;
+  width: calc(100% - 50px);
+  top: 20px;
+  height: calc(100vh - 50px);
+  z-index: 2000 !important;
   background-color: white;
   margin: 0 auto;
   z-index: 100; }
@@ -291,6 +294,11 @@ table {
     line-height: 52px;
     margin: 21px auto;
     text-align: center; }
+  .form-contact__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer; }
   .form-contact > .form-group.move-left {
     margin-left: 10px; }
   .form-contact .form-group {
