@@ -302,10 +302,12 @@ table {
   .form-contact > .form-group.move-left {
     margin-left: 10px; }
   .form-contact .form-group {
-    margin: auto;
+    margin-right: auto;
     display: inline-block;
     display: flex;
     flex-direction: column; }
+    .form-contact .form-group:nth-child(1) {
+      margin-left: 10px; }
     .form-contact .form-group label {
       margin: 15px 0 8px 0; }
   .form-contact input {
