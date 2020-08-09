@@ -333,8 +333,10 @@ table {
 
 .breadcrumps {
   margin-top: 86px;
-  padding: 10px 40px;
+  padding: 40px 10px 10px 40px;
   z-index: 3; }
+  .breadcrumps a {
+    margin-right: 10px; }
   .breadcrumps span {
     color: #E7A24F; }
 
