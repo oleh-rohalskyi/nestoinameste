@@ -4,6 +4,7 @@ function pageHome() {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
+        scrollLock: true,
         dots: '.dots',
         arrows: {
             prev: '.glider-prev',
@@ -14,6 +15,7 @@ function pageHome() {
         slidesToShow: 1,
         slidesToScroll: 1,
         draggable: true,
+        scrollLock: true,
         arrows: {
             prev: '.glider-prev-feed',
             next: '.glider-next-feed'

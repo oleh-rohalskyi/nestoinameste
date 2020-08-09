@@ -530,6 +530,7 @@ body {
   left: 15px; }
 
 section .wave {
+  pointer-events: none;
   left: 0;
   position: relative; }
   @media (max-width: 840px) {
