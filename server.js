@@ -5,15 +5,17 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 
+const ENV = process.ENV || 'development';
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'rohalskyi@gmail.com',
-      pass: 'Ahojworld12'
+        user: 'rohalskyi@gmail.com',
+        pass: 'Ahojworld12'
     }
-  });
-  
-  
+});
+
+app.use( express.static('public') );
 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -33,19 +35,24 @@ function renderPage(res,pageName) {
     res.end(result);
 }
 
-
-app.use( express.static('public') );
+app.get( '/' , function(req,res) {
+    res.redirect('/home');
+});
 
 app.get( '/home' , function(req, res) {
     renderPage(res,'home');
 });
 
-app.get( '/' , function(req,res) {
-    res.redirect('/home');
-});
-
 app.get( '/about' , function(req,res) {
     renderPage(res,'about');
+});
+
+app.get( '/rent' , function(req,res) {
+    renderPage(res,'rent');
+});
+
+app.get( '/gallery' , function(req,res) {
+    renderPage(res,'gallery');
 });
 
 function renderMail(mail) {
@@ -65,6 +72,7 @@ function renderMail(mail) {
 app.post( '/api/submit-contacts' , function(req,res) {
 
     const {name,phone,email,comment} = req.body;
+
     var mailOptions = {
         from: email,
         to: 'ukrainekava@gmail.com',
@@ -83,17 +91,11 @@ app.post( '/api/submit-contacts' , function(req,res) {
           console.log('Email sent: ' + info.response);
         }
       });
+
     res.json({success: true});
+
 });
 
-app.get( '/rent' , function(req,res) {
-    renderPage(res,'rent');
-});
-
-app.get( '/gallery' , function(req,res) {
-    renderPage(res,'gallery');
-});
-
-app.listen(config.dev.PORT,()=>{
-    console.log("Server listen on:", "http://localhost:" + config.dist.PORT);
+app.listen(config[ENV].PORT, () => {
+    console.log("Server listen on:", "http://localhost:" + config[ENV].PORT);
 });
