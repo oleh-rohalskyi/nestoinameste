@@ -1,8 +1,8 @@
 module.exports = {
     "dev": {
-        "PORT": 8080
+        "PORT": 80
     },
     "dist": {
-        "PORT": 8080
+        "PORT": 80
     },
 }
