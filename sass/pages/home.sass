@@ -42,9 +42,12 @@ section
             padding: 30px
             text-align: center
             margin-top: 0
+            idth: 100%
         color: white
         padding-left: 100px
-        padding-right: 30px
+        margin-right: 20%
+        @media (max-width: 1100px) 
+            width: 817px
         font-size: 34px
         margin-top: 36px
         font-weight: 300
@@ -56,10 +59,11 @@ section
     &__title-head
         @media (max-width: $min) 
             display: none
-        font-size: 50px
+        font-size: 68px
         padding-left: 100px
-        padding-right: 100px
-        width: fit-content
+        margin-right: 20%
+        @media (max-width: 1100px) 
+            margin-right: 0
         line-height: 102px
         height: 102px
         background-color: white

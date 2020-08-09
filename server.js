@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
 
-const ENV = process.ENV || 'development';
+const ENV = process.env.NODE_ENV || 'development';
 
 var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -21,7 +21,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 function rootPath(fileName) {
-    return __dirname + "/" + fileName;
+    return __dirname + "/" + fileName;  
 }
 
 function renderPage(res,pageName) {

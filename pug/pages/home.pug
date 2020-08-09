@@ -234,8 +234,44 @@ block script
             var marker = new google.maps.Marker({position: positionMarker, map: map});
         }
     script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyByo6w3-4vofRCkcXD3t2fxCCULoztQL6A&callback=initMap" async defer)
+    script.
+        const headerCafeButton = document.querySelector("circle[cx='278.424']");
+        const headerRentButton = document.querySelector("circle[cx='594.424']");
+        const headerCorporativeButton = document.querySelector("circle[cx='918.424']");
+        const headerSportButton = document.querySelector("circle[cx='1238.42']");
+        
+        addHoverPointerToSvg(headerCafeButton,()=>{
+            console.log('headerCafeButton');
+        });
 
+        addHoverPointerToSvg(headerRentButton,()=>{
+            
+        });
 
+        addHoverPointerToSvg(headerCorporativeButton,()=>{
+            
+        });
+
+        addHoverPointerToSvg(headerSportButton,()=>{
+            
+        });
+        
+        function addHoverPointerToSvg(svg,onClick) {
+            svg.style['fill'] = '#000';
+            svg.style['fill-opacity'] = '0.0';
+            const actions = [['mouseover','pointer'],['mouseout','inherit'],['click']];
+            actions.forEach( action => {
+                svg.addEventListener(action[0], e => {
+                    if (action[1]) {
+                        document.body.style.cursor = action[1]
+                    } else {
+                        onClick();
+                    }
+                });
+            });
+        }
+
+        
         
         
 

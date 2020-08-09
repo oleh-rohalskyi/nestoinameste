@@ -556,7 +556,7 @@ section .wave {
   .promo__title-discription {
     color: white;
     padding-left: 100px;
-    padding-right: 30px;
+    margin-right: 20%;
     font-size: 34px;
     margin-top: 36px;
     font-weight: 300; }
@@ -566,7 +566,11 @@ section .wave {
         font-size: 20px;
         padding: 30px;
         text-align: center;
-        margin-top: 0; } }
+        margin-top: 0;
+        idth: 100%; } }
+    @media (max-width: 1100px) {
+      .promo__title-discription {
+        width: 817px; } }
   .promo__title-min {
     display: none; }
     @media (max-width: 840px) {
@@ -574,16 +578,18 @@ section .wave {
         display: block;
         text-align: center; } }
   .promo__title-head {
-    font-size: 50px;
+    font-size: 68px;
     padding-left: 100px;
-    padding-right: 100px;
-    width: fit-content;
+    margin-right: 20%;
     line-height: 102px;
     height: 102px;
     background-color: white; }
     @media (max-width: 840px) {
       .promo__title-head {
         display: none; } }
+    @media (max-width: 1100px) {
+      .promo__title-head {
+        margin-right: 0; } }
     .promo__title-head span:nth-child(1) {
       color: #E7A24F; }
     .promo__title-head span:nth-child(2) {
