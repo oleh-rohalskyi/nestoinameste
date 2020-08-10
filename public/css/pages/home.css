@@ -563,6 +563,9 @@ section .wave {
     font-size: 34px;
     margin-top: 36px;
     font-weight: 300; }
+    @media (max-width: 1100px) {
+      .promo__title-discription {
+        width: 817px; } }
     @media (max-width: 840px) {
       .promo__title-discription {
         background-color: transparent;
@@ -571,9 +574,6 @@ section .wave {
         text-align: center;
         margin-top: 0;
         width: 100%; } }
-    @media (max-width: 1100px) {
-      .promo__title-discription {
-        width: 817px; } }
   .promo__title-min {
     display: none; }
     @media (max-width: 840px) {
