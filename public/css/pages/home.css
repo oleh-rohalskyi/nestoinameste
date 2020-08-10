@@ -570,7 +570,7 @@ section .wave {
         padding: 30px;
         text-align: center;
         margin-top: 0;
-        idth: 100%; } }
+        width: 100%; } }
     @media (max-width: 1100px) {
       .promo__title-discription {
         width: 817px; } }

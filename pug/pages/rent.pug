@@ -1,0 +1,34 @@
+extends ../layout.pug
+block content
+    .rent-layout(style="background-image: url(/images/photos/kachch.jpg)")
+    section.breadcrumps 
+        | Главная 
+        |  > 
+        span Аренда
+    section.rent-items
+        each propose in rentData
+            .rent-item(style='background-image: url(/images/photos/' + propose.image + ')')
+                .rent-item__title=propose.title
+                .rent-item__price #{propose.price}грн
+                img.rent-item__logo(src="/images/particles/logo-rent.png", alt="", srcset="")
+                .rent-item__discription!=propose.discription
+                img.rent-item__close(src="/images/particles/close-rent.png", alt="", srcset="")
+                a.rent-item__telegram(href="https://t.me/nestoinameste27")
+                    img(src="/images/social/telega.png", alt="", srcset="")
+                    div.default-button Написать в телеграм
+                a.rent-item__call(href="tel:+380502420211")
+                    div.default-button Заказать
+append script
+    script.
+        let items = document.querySelectorAll(".rent-item");
+        [...items].forEach((item)=>{
+            item.addEventListener("click", function (e) {
+                e.target.closest(".rent-item").classList.toggle("active");
+            })
+        })
+        let links = document.querySelectorAll(".rent-item a");
+        [...links].forEach((item)=>{
+            item.addEventListener("click", function (e) {
+                e.stopPropagation()
+            })
+        })

@@ -4,7 +4,7 @@ const config = require('./config')
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const app = express();
-
+const rentData = require('./rent.data.json')
 const ENV = process.env.NODE_ENV || 'development';
 
 var transporter = nodemailer.createTransport({
@@ -24,12 +24,13 @@ function rootPath(fileName) {
     return __dirname + "/" + fileName;  
 }
 
-function renderPage(res,pageName) {
+function renderPage(res,pageName,data) {
     const compiledFunction = pug.compileFile(`pug/pages/${pageName}.pug`,{
         basedir: rootPath("")
     });
     const result = compiledFunction({
-        pageName: pageName
+        pageName: pageName,
+        ...data
     });
     res.set('Content-Type', 'text/html');
     res.end(result);
@@ -48,7 +49,7 @@ app.get( '/about' , function(req,res) {
 });
 
 app.get( '/rent' , function(req,res) {
-    renderPage(res,'rent');
+    renderPage(res,'rent',{rentData});
 });
 
 app.get( '/gallery' , function(req,res) {
