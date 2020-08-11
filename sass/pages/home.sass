@@ -94,9 +94,11 @@ section
 .promo__slider
     position: absolute
     top: 60%
+    max-width: 1500px
     width: 100vw
     left: 0
     & svg
+        max-width: 1500px
         width: 100%
     @media (max-width: $min) 
         display: none
@@ -353,7 +355,7 @@ section
         padding-top: 30px
         padding-bottom: 20px
     &__wrap
-        width: 800px
+        width: 880px
         margin: 0 auto
         justify-content: center
         display: flex
@@ -461,7 +463,11 @@ section
 .clients 
     background-color: white
     width: 100vw
+    max-width: 1500px
     margin: 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
     &>h1
         margin-bottom: 35px
         color: black
@@ -470,6 +476,7 @@ section
         padding-top: 40px
     .clients__wrap
         padding-bottom: 30px
+        max-width: 1070px
         &>img 
             display: block
             margin: 14px

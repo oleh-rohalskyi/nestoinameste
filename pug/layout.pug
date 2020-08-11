@@ -8,105 +8,106 @@ html(lang="en")
         link(rel="stylesheet", href='/css/pages/'+pageName+'.css')
         link(href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap', rel='stylesheet')
     body
-        .dimmed
-        block header
-            form.form-contact.contact-form(style="display: none")
-                .form-contact__close X
-                .row
-                    .form-group
-                        label(for="") Введите Ваше имя
-                        input(type="text" value="" name="name")
-                    .form-group
-                        label(for="") Введите Вашу почту
-                        input(type="text"  name="mail")
-                .form-group.move-left
-                    label Введите Ваш телефон
-                    input(type="text" name="phone")
-                .form-group.move-left
-                    label(for="") Коментарий
-                    textarea(name="comment", cols="30", rows="10",)
-                div.default-button.submit-contact_js Отправить
-            header.header-mob
-                #menuButton.menu-button
-                    .burger-icon
-                a.header-mob__logo
-                    img(src="/images/logo-sidebar.svg", alt="", srcset="")
-                a.header-mob__telega(href="https://t.me/nestoinameste27")
-                    img(src="/images/social/telega-mob.svg", alt="", srcset="")
-                a(href="tel:+380502420211")
-                    img(src="/images/social/phone-mob.svg", alt="", srcset="")
-            .side-menu
-                a(href="/home")
-                    img(src="/images/logo-sidebar.svg", alt="").logo
-                ul.menu
-                    li
-                        a(href="") Аренда 
-                    //- li
-                    //-     a(href="") Меню
-                    //- li
-                    //-     a(href="") Галерея 
-                    li 
-                        a(href="/about") О нас
-                    li
-                        a(href="/home#contacts-link") Контакти
-            header.header-wrap
-                .header
+        .main-wrapper
+            .dimmed
+            block header
+                form.form-contact.contact-form(style="display: none")
+                    .form-contact__close X
+                    .row
+                        .form-group
+                            label(for="") Введите Ваше имя
+                            input(type="text" value="" name="name")
+                        .form-group
+                            label(for="") Введите Вашу почту
+                            input(type="text"  name="mail")
+                    .form-group.move-left
+                        label Введите Ваш телефон
+                        input(type="text" name="phone")
+                    .form-group.move-left
+                        label(for="") Коментарий
+                        textarea(name="comment", cols="30", rows="10",)
+                    div.default-button.submit-contact_js Отправить
+                header.header-mob
+                    #menuButton.menu-button
+                        .burger-icon
+                    a.header-mob__logo
+                        img(src="/images/logo-sidebar.svg", alt="", srcset="")
+                    a.header-mob__telega(href="https://t.me/nestoinameste27")
+                        img(src="/images/social/telega-mob.svg", alt="", srcset="")
+                    a(href="tel:+380502420211")
+                        img(src="/images/social/phone-mob.svg", alt="", srcset="")
+                .side-menu
                     a(href="/home")
-                        img(src="/images/logo.svg", alt="").logo
+                        img(src="/images/logo-sidebar.svg", alt="").logo
                     ul.menu
                         li
-                            a(href="/rent") Аренда 
+                            a(href="") Аренда 
                         //- li
                         //-     a(href="") Меню
                         //- li
-                        //-     a(href="") Галерея  
-                        li
+                        //-     a(href="") Галерея 
+                        li 
                             a(href="/about") О нас
                         li
                             a(href="/home#contacts-link") Контакти
-                    .menu-contacts
-                        a(href="https://t.me/nestoinameste27")
-                            img(src="/images/social/telega.png", alt="", srcset="")
-                        a(href="tel:+380502420211") +38 (050) 242-02-11
-                    a
-                        div.default-button.contact-form-action_js.default-button_menu Заказать звонок
-        block content
-        block foot
-            footer.footer
-                .copyright
-                    | ©NESTOINAMESTE 2014-2020 
-                    br
-                    | все права защищены
-                .footer-logo
-                    img(src="/images/particles/Group 105.png")
-                .footer-info
-                    .footer-info__item
-                        h2 Услуги
-                        a Корпоративы
-                        a Дни Рождения
-                        a Event локация
-                        a Спортивная зона
-                        a Лаундж зона
-                        a Семейный отдых
-                        a Кейтеринг
-                        a Aренда
-                    .footer-info__item
-                        h2 Контакты
-                        a(href="tel:+380502420211") +38 (050) 242-02-11
-                        a(href="email:ukrainekava@gmail.com") ukrainekava@gmail.com
-                        a(href="") Киев, X-Park, 02139
-                    //- .footer-info__item
-                    //-     h2 Новости
-                    //-     a Ближайшие мероприятия
-                    //-     a Фестивали
-                    //-     a Новинка на локации
-                    .footer-info__item
-                        h2 Мы в соц сетях
-                        .fotter-info__social
+                header.header-wrap
+                    .header
+                        a(href="/home")
+                            img(src="/images/logo.svg", alt="").logo
+                        ul.menu
+                            li
+                                a(href="/rent") Аренда 
+                            //- li
+                            //-     a(href="") Меню
+                            //- li
+                            //-     a(href="") Галерея  
+                            li
+                                a(href="/about") О нас
+                            li
+                                a(href="/home#contacts-link") Контакти
+                        .menu-contacts
                             a(href="https://t.me/nestoinameste27")
                                 img(src="/images/social/telega.png", alt="", srcset="")
-                            a(href="https://t.me/nestoinameste27")
-                                img(src="/images/social/insta.png", alt="", srcset="")
+                            a(href="tel:+380502420211") +38 (050) 242-02-11
+                        a
+                            div.default-button.contact-form-action_js.default-button_menu Заказать звонок
+            block content
+            block foot
+                footer.footer
+                    .copyright
+                        | ©NESTOINAMESTE 2014-2020 
+                        br
+                        | все права защищены
+                    .footer-logo
+                        img(src="/images/particles/Group 105.png")
+                    .footer-info
+                        .footer-info__item
+                            h2 Услуги
+                            a Корпоративы
+                            a Дни Рождения
+                            a Event локация
+                            a Спортивная зона
+                            a Лаундж зона
+                            a Семейный отдых
+                            a Кейтеринг
+                            a Aренда
+                        .footer-info__item
+                            h2 Контакты
+                            a(href="tel:+380502420211") +38 (050) 242-02-11
+                            a(href="email:ukrainekava@gmail.com") ukrainekava@gmail.com
+                            a(href="") Киев, X-Park, 02139
+                        //- .footer-info__item
+                        //-     h2 Новости
+                        //-     a Ближайшие мероприятия
+                        //-     a Фестивали
+                        //-     a Новинка на локации
+                        .footer-info__item
+                            h2 Мы в соц сетях
+                            .fotter-info__social
+                                a(href="https://t.me/nestoinameste27")
+                                    img(src="/images/social/telega.png", alt="", srcset="")
+                                a(href="https://t.me/nestoinameste27")
+                                    img(src="/images/social/insta.png", alt="", srcset="")
         script. 
             const info = {};
             info.page = "#{pageName}";

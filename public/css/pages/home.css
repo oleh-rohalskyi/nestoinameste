@@ -154,6 +154,7 @@ table {
   position: fixed;
   top: 0;
   width: 100vw;
+  max-width: 1500px;
   background-color: rgba(255, 255, 255, 0.76);
   display: flex;
   align-items: center; }
@@ -341,11 +342,18 @@ table {
     color: #E7A24F; }
 
 body {
+  display: flex;
+  margin: 0 auto;
   min-height: 100vh;
   background-color: white;
   overflow-x: hidden;
   width: 100vw;
   font-family: 'Roboto Condensed', sans-serif; }
+
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 1500px;
+  width: 100vw; }
 
 .dimmed-green {
   display: none;
@@ -353,6 +361,7 @@ body {
   top: 0;
   bottom: 0;
   width: 100vw;
+  max-width: 1500px;
   height: 100%;
   left: 0;
   background-color: #7BB83E;
@@ -622,9 +631,11 @@ section .wave {
 .promo__slider {
   position: absolute;
   top: 60%;
+  max-width: 1500px;
   width: 100vw;
   left: 0; }
   .promo__slider svg {
+    max-width: 1500px;
     width: 100%; }
   @media (max-width: 840px) {
     .promo__slider {
@@ -911,7 +922,7 @@ section .wave {
     padding-top: 30px;
     padding-bottom: 20px; }
   .season-result__wrap {
-    width: 800px;
+    width: 880px;
     margin: 0 auto;
     justify-content: center;
     display: flex;
@@ -1029,7 +1040,11 @@ section .wave {
 .clients {
   background-color: white;
   width: 100vw;
-  margin: 0 auto; }
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .clients > h1 {
     margin-bottom: 35px;
     color: black;
@@ -1038,6 +1053,7 @@ section .wave {
     padding-top: 40px; }
   .clients .clients__wrap {
     padding-bottom: 30px;
+    max-width: 1070px;
     display: flex;
     width: 100%;
     align-items: center;
