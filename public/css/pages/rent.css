@@ -264,19 +264,23 @@ table {
   flex-direction: row; }
 
 .form-contact {
+  width: 970px;
+  margin: 50px auto;
+  position: relative;
   box-shadow: 2px 4px 15px 5px #d1e6bc;
   padding: 30px 10px;
-  position: fixed;
-  left: 25px;
-  overflow-y: scroll;
-  width: calc(100% - 50px);
-  top: 20px;
-  height: calc(100vh - 50px);
-  z-index: 2000 !important;
   background-color: white;
-  margin: 0 auto;
   z-index: 100; }
-  @media (max-width: 840px) {
+  .form-contact__wrap {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2000 !important; }
+  @media (max-width: 980px) {
     .form-contact {
       width: 100vw;
       left: 0;
@@ -286,7 +290,8 @@ table {
         flex-direction: column; }
       .form-contact .form-group {
         margin-left: 0 !important;
-        width: 100%; }
+        width: 100% !important;
+        padding-left: 10px !important; }
       .form-contact input, .form-contact textarea {
         width: 100% !important; } }
   .form-contact .default-button {
@@ -300,15 +305,14 @@ table {
     right: 10px;
     top: 10px;
     cursor: pointer; }
-  .form-contact > .form-group.move-left {
-    margin-left: 10px; }
   .form-contact .form-group {
-    margin-right: auto;
+    width: calc(50% - 15px);
+    padding-left: 30px;
     display: inline-block;
     display: flex;
     flex-direction: column; }
-    .form-contact .form-group:nth-child(1) {
-      margin-left: 10px; }
+    .form-contact .form-group.textarea {
+      width: calc(100% - 30px); }
     .form-contact .form-group label {
       margin: 15px 0 8px 0; }
   .form-contact input {
@@ -317,7 +321,7 @@ table {
     padding: 4px;
     padding-left: 10px;
     background-color: #D1E6BC;
-    width: 370px;
+    width: 100%;
     height: 51px;
     border: none;
     border-radius: 5px; }
@@ -404,6 +408,7 @@ body {
     text-align: center; }
 
 .rent-layout {
+  max-width: 1500px;
   background-size: cover;
   position: absolute;
   width: 100%;

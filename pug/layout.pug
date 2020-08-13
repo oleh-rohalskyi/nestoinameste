@@ -11,22 +11,23 @@ html(lang="en")
         .main-wrapper
             .dimmed
             block header
-                form.form-contact.contact-form(style="display: none")
-                    .form-contact__close X
-                    .row
-                        .form-group
-                            label(for="") Введите Ваше имя
-                            input(type="text" value="" name="name")
-                        .form-group
-                            label(for="") Введите Вашу почту
-                            input(type="text"  name="mail")
-                    .form-group.move-left
-                        label Введите Ваш телефон
-                        input(type="text" name="phone")
-                    .form-group.move-left
-                        label(for="") Коментарий
-                        textarea(name="comment", cols="30", rows="10",)
-                    div.default-button.submit-contact_js Отправить
+                .form-contact__wrap(style="display: none")
+                    form.form-contact.contact-form
+                        .form-contact__close X
+                        .row
+                            .form-group
+                                label(for="") Введите Ваше имя
+                                input(type="text" value="" name="name")
+                            .form-group
+                                label(for="") Введите Вашу почту
+                                input(type="text"  name="mail")
+                        .form-group.move-left
+                            label Введите Ваш телефон
+                            input(type="text" name="phone")
+                        .form-group.move-left.textarea
+                            label(for="") Коментарий
+                            textarea(name="comment", cols="30", rows="10",)
+                        div.default-button.submit-contact_js Отправить
                 header.header-mob
                     #menuButton.menu-button
                         .burger-icon
@@ -118,6 +119,11 @@ html(lang="en")
             const sideMenu = document.querySelector('.side-menu');
             const dimmed = document.querySelector('.dimmed');
             menuButton.addEventListener('click', function (e) {
+                if (menuButton.classList.contains('is-active')) {
+                    dimmed.style['overflow'] = 'inherit';
+                } else {
+                    dimmed.style['overflow'] = 'hidden';
+                }
                 menuButton.classList.toggle('is-active');
                 sideMenu.classList.toggle('is-active');
                 dimmed.classList.toggle('is-active');
@@ -125,6 +131,7 @@ html(lang="en")
             });
 
             const contactForm = document.querySelector('.contact-form');
+            const contactFormWrap = document.querySelector('.form-contact__wrap');
             const closeForm = document.querySelector('.form-contact__close');
             const contactsSubmit = document.querySelector('.submit-contact_js');
             const toContactFormActionsNode = [...document.querySelectorAll('.contact-form-action_js')];
@@ -134,24 +141,25 @@ html(lang="en")
                 }) ) {
                     return;
                 }
-                console.log('out');
                 var isClickInside = contactForm.contains(event.target);
                 if (!isClickInside) {
-                    contactForm.style.display = 'none';
+                    document.body.style['overflow'] = 'inherit';
+                    contactFormWrap.style.display = 'none';
                 }
             });
             closeForm.addEventListener('click', function(event) {
-                contactForm.style.display = 'none';
+                contactFormWrap.style.display = 'none';
             })
             toContactFormActionsNode.forEach(actionNode=>{
                 actionNode.addEventListener('click', function (e) {
-                    console.log('click');
-                    contactForm.style.display = 'block';
+                    document.body.style['overflow'] = 'hidden';
+                    contactFormWrap.style.display = 'block';
                     e.preventDefault();
                 });
             })
+
             contactsSubmit.addEventListener('click', function(event) {
-                console.log(getFormData(contactForm));
+
                 fetch("/api/submit-contacts",{
                     method: "POST",
                     headers: {
@@ -159,8 +167,9 @@ html(lang="en")
                     },
                     body: JSON.stringify(getFormData(contactForm))
                 }).then((response)=>response.json()).then(data=>{
-                    contactForm.style.display = 'none';
+                    contactFormWrap.style.display = 'none';
                 })
+
             })
 
             function getFormData(formNode) {
@@ -170,3 +179,15 @@ html(lang="en")
                 })
                 return data;
             }
+            document.addEventListener('keydown',function(evt) {
+                evt = evt || window.event;
+                var isEscape = false;
+                if ("key" in evt) {
+                    isEscape = (evt.key === "Escape" || evt.key === "Esc");
+                } else {
+                    isEscape = (evt.keyCode === 27);
+                }
+                if (isEscape) {
+                    contactFormWrap.style.display = 'none';
+                }
+            });
