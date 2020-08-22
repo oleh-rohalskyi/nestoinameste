@@ -259,9 +259,21 @@ table {
         font-size: 14px;
         color: #272727; }
 
+#gameContainer {
+  margin: 80px auto 0 auto !important; }
+
 .row {
   display: flex;
   flex-direction: row; }
+
+.fullscreen {
+  height: 47px;
+  width: 170px;
+  cursor: pointer;
+  line-height: 47px;
+  text-align: center;
+  font-size: 20px;
+  margin: 10px auto; }
 
 .form-contact {
   width: 970px;
@@ -375,6 +387,13 @@ body {
       display: block; } }
   .dimmed-green.allways {
     display: block; }
+
+.play-with-me {
+  position: fixed;
+  right: 0;
+  top: 136px;
+  cursor: pointer;
+  z-index: 4; }
 
 .dimmed {
   position: fixed;

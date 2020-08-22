@@ -49,8 +49,12 @@ app.get( '/about' , function(req,res) {
 });
 
 app.get( '/rent' , function(req,res) {
-    console.log(rentData);
     renderPage(res,'rent',{rentData});
+});
+
+app.get( '/play-with-me' , function(req,res) {
+    console.log(rentData);
+    renderPage(res,'play');
 });
 
 app.get( '/gallery' , function(req,res) {
