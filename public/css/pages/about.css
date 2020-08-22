@@ -149,7 +149,7 @@ table {
 
 .header-wrap .header {
   padding-left: 10px;
-  z-index: 1000;
+  z-index: 900;
   height: 80px;
   position: fixed;
   top: 0;
@@ -378,13 +378,13 @@ body {
 
 .dimmed {
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
   width: 100vw;
   height: 100vh;
   background-color: black;
   opacity: 0.0;
   pointer-events: none;
-  transition: 2s; }
+  transition: 0.5s; }
   .dimmed.is-active {
     opacity: 0.8; }
 

@@ -1,138 +1,166 @@
 @import '../global'
 
 .rent-layout
-    max-width: 1500px
-    background-size: cover
-    position: absolute
-    width: 100%
-    height: 100%
-    background-color: white
-    opacity: 0.5
+    position: relative
+    &:before 
+        background-size: contain
+        background-color: white
+        z-index: -1
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        content: ''
+        background-image: url(/images/photos/kachch.jpg)
+        opacity: 0.4
 .rent-items
     @media (max-width: 840px)
         flex-direction: column
         align-items: center
+    flex-wrap: wrap
     display: flex
     justify-content: center
     padding: 30px
     z-index: 4
-.rent-item
-    margin: 10px
-    &:nth-child(1-6)
-        border: 3px white solid
-    &:nth-child(7-11)
+.rent-item__wrap
+    & .rent-item
+        background-position: center
+        background-size: cover
+        background-repeat: norepeat
+        position: relative
+        margin: 10px
+        cursor: pointer
         border: 3px #C7E9A5 solid
-    &:nth-child(12)
-        border: 3px #F1C693 solid
+        width: 370px
+        height: 257px
+        background-color: rgba(39, 39, 39, 0.4)
+        border: 10px solid #C8E9A7
+        box-sizing: border-box
+        box-shadow: 0px 4px 4px rgba(123, 184, 62, 0.14)
+        border-radius: 25px
+        color: white
+        &__discriptions
+            @media (max-width: $min + 40px)
+                position: static
+                padding: 10px
+                font-size: 14px
+                text-align: center
+                width: 100%
+            visibility: hidden
+            width: 580px
+            font-size: 23px
+            line-height: 34px
+            padding-top: 110px
+            padding-bottom: 250px
+            padding-left: 80px
+            text-transform: uppercase
+            & p 
+                margin: 20px 0
+        &__controlls 
+            justify-content: center
+            display: none
+            padding-bottom: 80px
+            &>*
+                margin: 10px
+        &__title
+            position: absolute
+            bottom: 10px
+            left: 10px
+            opacity: 1
+            font-weight: normal
+            font-size: 16px
+            line-height: 19px
+            text-transform: uppercase
+        &__logo
+            @media (max-width: $min + 40px)
+                width: 200px
+                display: block
+                position: static !important
+                margin: 10px auto
+            opacity: 0
+            position: absolute
+            right: 47px
+            top: 55px
+        &__close 
+            width: 50px
+            position: absolute
+            right: 10px
+            top: 10px
+            opacity: 0
     &.active
-        border: 3px #C7E9A5 solid
+        height: 100vh
+        width: 100vw
+        overflow-y: scroll
         position: fixed
-        width: calc(100vw - 340px)
-        min-height: calc(834px - 40px)
+        left: 0
+        top: 0
+        z-index: 3002
+    &.active .rent-item
+        color: white
+        z-index: 3001
+        @media (max-width: 1150px)
+            width: 100%
+            align-items: center
+        background-size: cover
+        background-position: center
+        border-radius: 14px
+        border: 3px #C7E9A5 solid
+        width: 1100px
+        margin: 20px auto
         @media (max-width: $min)
             height: initial
-        top: 20px
-        bottom: 20px
-        left: 170px
-        z-index: 1001
-        margin: 0
-        transition: all 0.3s
-        & .rent-item
-            &__telegram
-                visibility: visible
-            &__call
-                visibility: visible
-            &__discription
-                opacity: 1
-            &__logo
-                position: absolute
-                opacity: 1
-                right: 47px
-                top: 55px
-            &__close
-                width: 50px
-                position: absolute
-                right: 10px
-                top: 10px
-                opacity: 1
-            &__title
-                opacity: 0
-            &__price
-                opacity: 0
-    color: white
-    position: relative
-    @media (max-width: 840px)
-        width: 100%
-        align-items: center
-    width: 370px
-    height: 260px
-    background-size: cover
-    background-position: center
-    border: 4px white solid
-    border-radius: 14px
-    &__telegram
-        @media (max-width: $min)
-            position: static
-            margin: 0 auto
-        position: absolute
-        visibility: hidden
-        height: 47px
-        line-height: 46px
-        width: 237px
-        display: block
-        text-align: center
-        bottom: 80px
-        right: 270px
-        & img 
-            @media (max-width: $min)
-                display: none
-            position: absolute
-            left: -17px
-            top: -2px
-            width: 51px
-            height: 51px
-    &__call
-        @media (max-width: $min)
-            position: static
-            margin: 20px auto
+        height: auto
+        &__controlls 
+            display: flex
+        &__discriptions
+            visibility: visible
+        &__logo
+            opacity: 1
+        &__close
+            opacity: 1
+        &__title
+            opacity: 0
+        &__telegram
+            margin-left: auto
+            margin-right: 30px
+            @media (max-width: $min + 40px)
+                position: static
+                margin-left: initial
+                margin-right: initial
+            position: relative
+            height: 47px
+            line-height: 46px
             width: 237px
-        position: absolute
-        text-align: center
-        line-height: 46px
-        display: block
-        width: 170px
-        height: 47px
-        visibility: hidden
-        bottom: 80px
-        right: 65px
-    &__title
-        @media (max-width: $min)
-            bottom: 200px
-        position: absolute
-        left: 20px
-        bottom: 20px
-    &__discription
-        @media (max-width: $min)
-            position: static
-            padding: 10px
-            font-size: 14px
-        opacity: 0
-        text-transform: uppercase
-        position: relative
-        top: 108px
-        left: 60px
-        & p 
-            margin: 20px 0
-    &__price
-        position: absolute
-        right: 20px
-        bottom: 20px
-    &__logo
-        @media (max-width: $min)
-            width: 200px
             display: block
-            position: static !important
-            margin: 10px auto
-        opacity: 0
-    &__close
-        opacity: 0
+            text-align: center
+            & img 
+                @media (max-width: $min + 40px)
+                    display: none
+                position: absolute
+                left: -17px
+                top: -2px
+                width: 51px
+                height: 51px
+        &__call
+            @media (max-width: $min + 40px)
+                position: static
+                width: 237px
+                margin-right: initial
+            position: relative
+            text-align: center
+            line-height: 46px
+            display: block
+            margin-right: 65px
+            width: 170px
+            height: 47px
+        &__title
+            @media (max-width: $min + 40px)
+                bottom: 200px
+            position: absolute
+            left: 20px
+            bottom: 20px
+        &__price
+            position: absolute
+            right: 20px
+            bottom: 20px

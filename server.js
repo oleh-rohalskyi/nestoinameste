@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'rohalskyi@gmail.com',
-        pass: 'Ahojworld12'
+        pass: 'Axelive4111'
     }
 });
 
@@ -49,6 +49,7 @@ app.get( '/about' , function(req,res) {
 });
 
 app.get( '/rent' , function(req,res) {
+    console.log(rentData);
     renderPage(res,'rent',{rentData});
 });
 

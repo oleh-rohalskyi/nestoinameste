@@ -1,29 +1,39 @@
 extends ../layout.pug
 block content
-    .rent-layout(style="background-image: url(/images/photos/kachch.jpg)")
-    section.breadcrumps 
-        | Главная 
-        |  > 
-        span Аренда
-    section.rent-items
-        each propose in rentData
-            .rent-item(style='background-image: url(/images/photos/' + propose.image + ')')
-                .rent-item__title=propose.title
-                .rent-item__price #{propose.price}грн
-                img.rent-item__logo(src="/images/particles/logo-rent.png", alt="", srcset="")
-                .rent-item__discription!=propose.discription
-                img.rent-item__close(src="/images/particles/close-rent.png", alt="", srcset="")
-                a.rent-item__telegram(href="https://t.me/nestoinameste27")
-                    img(src="/images/social/telega.png", alt="", srcset="")
-                    div.default-button Написать в телеграм
-                a.rent-item__call(href="tel:+380502420211")
-                    div.default-button Заказать
+    .rent-layout
+        section.breadcrumps 
+            | Главная 
+            |  > 
+            span Аренда
+        section.rent-items
+            each propose in rentData
+                .rent-item__wrap
+                    .rent-item(style='background-image: url(/images/photos/' + propose.image + ')')
+                        .rent-item__title=propose.title
+                        img.rent-item__logo(src="/images/particles/logo-rent.png", alt="", srcset="")
+                        .rent-item__discriptions
+                            each p in propose.p
+                                p.rent-item__discription!=p
+                        .rent-item__controlls
+                            a.rent-item__telegram(href="https://t.me/nestoinameste27")
+                                img(src="/images/social/telega.png", alt="", srcset="")
+                                div.default-button Написать в телеграм
+                            a.rent-item__call(href="tel:+380502420211")
+                                div.default-button Заказать
+                        img.rent-item__close(src="/images/particles/close-rent.png", alt="", srcset="")
 append script
     script.
-        let items = document.querySelectorAll(".rent-item");
+        let items = document.querySelectorAll(".rent-item__wrap");
         [...items].forEach((item)=>{
             item.addEventListener("click", function (e) {
-                e.target.closest(".rent-item").classList.toggle("active");
+                dimmed.classList.toggle('is-active');
+                e.target.closest(".rent-item__wrap").classList.toggle("active");
+                if (e.target.closest(".rent-item__wrap").classList.contains('active')) {
+                    document.body.style['overflow'] = 'hidden';
+                } else {
+                    document.body.style['overflow'] = 'inherit';
+                }
+                e.stopPropagation()
             })
         })
         let links = document.querySelectorAll(".rent-item a");
