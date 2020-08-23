@@ -1,12 +1,17 @@
 extends ../layout.pug
 block content
     .webgl-content
-        #gameContainer(style='width: 960px; height: 600px')
+        #gameContainer(style='width: 320px; height: 240px')
         .fullscreen.default-button(onclick='gameInstance.SetFullscreen(1)').
             на весь екран
 block script
     script(src='TemplateData/UnityProgress.js')
     script(src='Build/UnityLoader.js')
     script.
+        var gameContainer = document.querySelector('#gameContainer');
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        gameContainer.style.width = w+'px';
+        gameContainer.style.height = h+'px';
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/builds.json", {onProgress: UnityProgress});
         document.querySelector('.play-with-me').style.display = 'none';
