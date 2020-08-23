@@ -45,7 +45,7 @@ table {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 5;
+  z-index: 1000;
   height: 52px;
   background-color: #262626;
   padding: 0 15px;
@@ -67,7 +67,7 @@ table {
       margin-top: 18px; }
 
 .side-menu {
-  z-index: 6;
+  z-index: 1000;
   position: fixed;
   width: calc(100vw - 54px);
   right: calc( (100vw - 54px) * -1);

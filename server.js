@@ -53,8 +53,11 @@ app.get( '/rent' , function(req,res) {
 });
 
 app.get( '/play-with-me' , function(req,res) {
-    console.log(rentData);
     renderPage(res,'play');
+});
+
+app.get( '/menu' , function(req,res) {
+    renderPage(res,'menu');
 });
 
 app.get( '/gallery' , function(req,res) {
