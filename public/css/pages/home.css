@@ -792,6 +792,7 @@ section .wave {
 
 .about {
   background-color: #7BB83E;
+  background-position: center;
   padding: 0 100px 100px 100px;
   position: relative; }
   @media (max-width: 840px) {
