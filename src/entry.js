@@ -26,6 +26,7 @@ function pageHome() {
 if (info.page === "home") {
     pageHome();
 }
+console.log(info)
 if (info.page === "gallery") {
 
     new Glider(document.querySelector('.glider-video'), {

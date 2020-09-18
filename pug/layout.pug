@@ -9,6 +9,7 @@ html(lang="en")
         link(href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap', rel='stylesheet')
     body
         .main-wrapper
+            .messageSend.disabled с вами скоро свяжутся  
             .dimmed
             a.play-with-me(href="/play-with-me" target="_blank")
                 img(src="/images/particles/play.png", alt="", srcset="")
@@ -44,13 +45,13 @@ html(lang="en")
                         img(src="/images/logo-sidebar.svg", alt="").logo
                     ul.menu
                         li
-                            a(href="/rent") Аренда 
+                            a(href="/rent"  class=pageName === 'rent' ? 'active' : '') Аренда 
                         li
-                            a(href="/menu") Меню
+                            a(href="/menu"  class=pageName === 'menu' ? 'active' : '') Меню
                         //- li
-                        //-     a(href="") Галерея 
+                        //-     a(href="/gallery"  class=pageName === 'gallery' ? 'active' : '') Галерея 
                         li 
-                            a(href="/about") О нас
+                            a(href="/about"  class=pageName === 'about' ? 'active' : '') О нас
                         li
                             a(href="/home#contacts-link") Контакти
                 header.header-wrap
@@ -59,13 +60,13 @@ html(lang="en")
                             img(src="/images/logo.svg", alt="").logo
                         ul.menu
                             li
-                                a(href="/rent") Аренда 
+                                a(href="/rent" class=pageName === 'rent' ? 'active' : '') Аренда 
                             li
-                                a(href="/menu") Меню
+                                a(href="/menu" class=pageName === 'menu' ? 'active' : '') Меню
                             //- li
-                            //-     a(href="") Галерея  
+                            //-     a(href="/gallery" class=pageName === 'gallery' ? 'active' : '') Галерея 
                             li
-                                a(href="/about") О нас
+                                a(href="/about" class=pageName === 'about' ? 'active' : '') О нас
                             li
                                 a(href="/home#contacts-link") Контакти
                         .menu-contacts
@@ -99,11 +100,6 @@ html(lang="en")
                             a(href="tel:+380502420211") +38 (050) 242-02-11
                             a(href="email:ukrainekava@gmail.com") ukrainekava@gmail.com
                             a(href="") Киев, X-Park, 02139
-                        //- .footer-info__item
-                        //-     h2 Новости
-                        //-     a Ближайшие мероприятия
-                        //-     a Фестивали
-                        //-     a Новинка на локации
                         .footer-info__item
                             h2 Мы в соц сетях
                             .fotter-info__social
@@ -120,6 +116,13 @@ html(lang="en")
             const menuButton = document.getElementById('menuButton');
             const sideMenu = document.querySelector('.side-menu');
             const dimmed = document.querySelector('.dimmed');
+            const messageSend = document.querySelector('.messageSend');
+            const sideBarMenuItems = document.querySelectorAll('ul.menu a');
+
+            [...sideBarMenuItems].forEach(node=>node.addEventListener('click',()=>{
+                sideMenu.classList.toggle('is-active');
+            }))
+
             menuButton.addEventListener('click', function (e) {
                 if (menuButton.classList.contains('is-active')) {
                     dimmed.style['overflow'] = 'inherit';
@@ -137,6 +140,7 @@ html(lang="en")
             const closeForm = document.querySelector('.form-contact__close');
             const contactsSubmit = document.querySelector('.submit-contact_js');
             const toContactFormActionsNode = [...document.querySelectorAll('.contact-form-action_js')];
+
             document.addEventListener('click', function(event) {
                 if ( toContactFormActionsNode.some(i=>{
                     return i===event.target;
@@ -149,9 +153,12 @@ html(lang="en")
                     contactFormWrap.style.display = 'none';
                 }
             });
+
             closeForm.addEventListener('click', function(event) {
+                document.body.style['overflow'] = 'inherit';
                 contactFormWrap.style.display = 'none';
             })
+            
             toContactFormActionsNode.forEach(actionNode=>{
                 actionNode.addEventListener('click', function (e) {
                     document.body.style['overflow'] = 'hidden';
@@ -169,6 +176,13 @@ html(lang="en")
                     },
                     body: JSON.stringify(getFormData(contactForm))
                 }).then((response)=>response.json()).then(data=>{
+                    setTimeout(()=>{
+                        messageSend.classList.toggle('disabled');
+                        setTimeout(()=>{
+                            messageSend.classList.toggle('disabled');
+                        },4000)
+                    },2000)
+                    
                     contactFormWrap.style.display = 'none';
                 })
 
@@ -181,6 +195,7 @@ html(lang="en")
                 })
                 return data;
             }
+
             document.addEventListener('keydown',function(evt) {
                 evt = evt || window.event;
                 var isEscape = false;

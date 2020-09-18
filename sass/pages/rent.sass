@@ -1,6 +1,7 @@
 @import '../global'
 
 .rent-layout
+    box-shadow: inset 0px 200px 96px -131px rgba(0,0,0,0.76)
     position: relative
     &:before 
         background-size: cover
@@ -34,7 +35,7 @@
         margin: 10px
         cursor: pointer
         border: 3px #C7E9A5 solid
-        width: 370px
+        max-width: 370px
         height: 257px
         background-color: rgba(39, 39, 39, 0.4)
         border: 10px solid #C8E9A7
@@ -60,6 +61,9 @@
             & p 
                 margin: 20px 0
         &__controlls 
+            @media (max-width: $min + 40px)
+                flex-direction: column
+                align-items: center
             justify-content: center
             display: none
             padding-bottom: 80px
@@ -91,8 +95,11 @@
             top: 10px
             opacity: 0
     &.active
+        .rent-item 
+            max-width: 100vw !important
         height: 100vh
         width: 100vw
+        
         overflow-y: scroll
         position: fixed
         left: 0
@@ -149,11 +156,11 @@
                 position: static
                 width: 237px
                 margin-right: initial
+                margin: 0
             position: relative
             text-align: center
             line-height: 46px
             display: block
-            margin-right: 65px
             width: 170px
             height: 47px
         &__title

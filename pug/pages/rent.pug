@@ -1,10 +1,7 @@
 extends ../layout.pug
 block content
     .rent-layout
-        section.breadcrumps 
-            | Главная 
-            |  > 
-            span Аренда
+        include ../breadcrumps.pug
         section.rent-items
             each propose in rentData
                 .rent-item__wrap
@@ -19,7 +16,9 @@ block content
                                 img(src="/images/social/telega.png", alt="", srcset="")
                                 div.default-button Написать в телеграм
                             a.rent-item__call(href="tel:+380502420211")
-                                div.default-button Заказать
+                                div.default-button Позвонить
+                            a
+                                div.default-button.contact-form-action_js.default-button_menu Заказать звонок
                         img.rent-item__close(src="/images/particles/close-rent.png", alt="", srcset="")
 append script
     script.

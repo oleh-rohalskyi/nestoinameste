@@ -6,6 +6,24 @@ $min: 840px
 @import './reset'
 @import './header'
 @import './footer'
+
+.messageSend
+    &.disabled
+        bottom: -100px
+    transition: all 0.4s
+    position: fixed
+    background-color: $brand-orange
+    color: black
+    width: calc(100vw - 20px)
+    left: 10px
+    line-height: 40px
+    text-align: center
+    height: 39px
+    bottom: 10px
+    border-radius: 4px
+    border: 2px solid $brand-blue
+    z-index: 3000
+    
 #gameContainer
     margin: 80px auto 0 auto !important
 .row 
@@ -20,6 +38,7 @@ $min: 840px
     font-size: 20px
     margin: 10px auto
 .form-contact
+    z-index: 3003
     &__wrap
         position: fixed
         height: 100vh
@@ -28,7 +47,7 @@ $min: 840px
         bottom: 0
         overflow-y: scroll
         overflow-x: hidden
-        z-index: 2000 !important
+        z-index: 3003 !important
     width: 970px
     margin: 50px auto
     position: relative
@@ -98,12 +117,15 @@ $min: 840px
 
 .breadcrumps
     margin-top: 86px
-    padding: 40px 10px 10px 40px
+    padding: 15px 10px 10px 40px
     z-index: 3
+    color: #979797
+    text-decoration: underline
     & a 
-        margin-right: 10px
+        text-decoration: underline
     & span 
         color: #E7A24F
+        text-decoration: underline
 
 body
     display: flex
@@ -137,6 +159,9 @@ body
         & img
             width: 80px
             height: auto
+    & img
+        width: 120px
+        height: auto
     position: fixed
     right: 0
     top: 136px

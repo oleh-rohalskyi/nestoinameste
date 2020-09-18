@@ -47,6 +47,8 @@
         font-size: 25px
         margin-left: 30px
         & li
+            & a.active
+                color: $brand-orange
             line-height: 55px
         
         
@@ -91,9 +93,9 @@
             color: $default-black
             & li 
                 margin-left: 10px
-                & a:hover 
+                & a:hover , & a.active
                     color: $brand-orange
-        & .logo 
+        & .logo
             margin-top: 5px
             height: 63px
             width: 241px

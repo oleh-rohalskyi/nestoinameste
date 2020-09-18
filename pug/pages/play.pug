@@ -1,5 +1,6 @@
 extends ../layout.pug
 block content
+    include ../breadcrumps.pug
     .webgl-content
         #gameContainer(style='width: 320px; height: 240px')
         .fullscreen.default-button(onclick='gameInstance.SetFullscreen(1)').

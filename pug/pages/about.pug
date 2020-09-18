@@ -1,11 +1,7 @@
 extends ../layout.pug
 
 block content
-    section.breadcrumps 
-        a(href="/")
-            | Главная 
-            |  > 
-        span О нас
+    include ../breadcrumps.pug
     section.about-items
         .about-item
             h2.about-item__title.about-item__title_mob КОРПОРАТИВЫ
