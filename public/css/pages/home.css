@@ -914,6 +914,7 @@ section .wave {
       @media (max-width: 840px) {
         .feedback .feedback-slide__discription {
           flex-direction: column;
+          justify-content: start;
           text-align: center;
           padding: 20px;
           padding: 0; } }
