@@ -121,6 +121,8 @@ html(lang="en")
 
             [...sideBarMenuItems].forEach(node=>node.addEventListener('click',()=>{
                 sideMenu.classList.toggle('is-active');
+                dimmed.classList.toggle('is-active');
+                menuButton.classList.toggle('is-active');
             }))
 
             menuButton.addEventListener('click', function (e) {
@@ -165,6 +167,7 @@ html(lang="en")
                     contactFormWrap.style.display = 'block';
                     e.preventDefault();
                 });
+                
             })
 
             contactsSubmit.addEventListener('click', function(event) {
