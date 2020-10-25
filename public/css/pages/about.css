@@ -502,7 +502,8 @@ body {
       min-width: 570px;
       min-height: 386px;
       background-size: cover;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      background-position: center; }
       @media (max-width: 1025px) {
         .about-items .about-item__image {
           min-width: 100%; } }
